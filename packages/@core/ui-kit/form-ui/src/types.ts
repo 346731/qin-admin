@@ -8,7 +8,7 @@ import type { ClassType, MaybeComputedRef } from '@qin-core/typings';
 
 import type { FormApi } from './form-api';
 
-export type FormLayout = 'horizontal' | 'vertical';
+export type FormLayout = 'horizontal' | 'inline' | 'vertical';
 
 export type BaseFormComponentType =
   | 'DefaultButton'
@@ -339,9 +339,10 @@ export interface FormRenderProps<
 }
 
 export interface ActionButtonOptions extends QinButtonProps {
-  [key: string]: any;
   content?: MaybeComputedRef<string>;
   show?: boolean;
+
+  [key: string]: any;
 }
 
 export interface QinFormProps<
