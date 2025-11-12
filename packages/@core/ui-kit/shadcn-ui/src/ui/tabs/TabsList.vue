@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-07-02 11:09:43
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { TabsListProps } from 'reka-ui';
 
 import { computed } from 'vue';
@@ -25,13 +25,13 @@ const delegatedProps = computed(() => {
 
 <template>
   <TabsList
-    v-bind="delegatedProps"
     :class="
       cn(
-        'bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1',
+        'bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-md p-1',
         props.class,
       )
     "
+    v-bind="delegatedProps"
   >
     <slot></slot>
   </TabsList>
