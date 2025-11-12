@@ -88,10 +88,8 @@ function toggleTheme(event: MouseEvent) {
       `circle(0px at ${x}px ${y}px)`,
       `circle(${endRadius}px at ${x}px ${y}px)`,
     ];
-    document.documentElement.animate(
+    const animate = document.documentElement.animate(
       {
-        // TODO: 不知道什么情况，nodejs版本为20.19.0，但是还报错
-        // eslint-disable-next-line n/no-unsupported-features/es-syntax
         clipPath: isDark.value ? clipPath.toReversed() : clipPath,
       },
       {
@@ -102,6 +100,9 @@ function toggleTheme(event: MouseEvent) {
           : '::view-transition-new(theme)',
       },
     );
+    animate.onfinish = () => {
+      transition.skipTransition();
+    };
   });
 }
 
