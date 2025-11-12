@@ -135,7 +135,7 @@ function pointerDownOutside(e: Event) {
   }
 }
 
-function handerOpenAutoFocus(e: Event) {
+function handleOpenAutoFocus(e: Event) {
   if (!openAutoFocus.value) {
     e?.preventDefault();
   }
@@ -167,10 +167,16 @@ watch(
     }
   },
 );
+
+function handleOpened() {
+  props.drawerApi?.onOpened();
+}
+
 function handleClosed() {
   isClosed.value = true;
   props.drawerApi?.onClosed();
 }
+
 const getForceMount = computed(() => {
   return !unref(destroyOnClose) && unref(hasOpened);
 });
@@ -190,19 +196,19 @@ const getForceMount = computed(() => {
           hidden: isClosed,
         })
       "
+      :force-mount="getForceMount"
       :modal="modal"
       :open="state?.isOpen"
+      :overlay-blur="overlayBlur"
       :side="placement"
       :z-index="zIndex"
-      :force-mount="getForceMount"
-      :overlay-blur="overlayBlur"
-      @close-auto-focus="handleFocusOutside"
       @closed="handleClosed"
+      @opened="handleOpened"
+      @close-auto-focus="handleFocusOutside"
       @escape-key-down="escapeKeyDown"
       @focus-outside="handleFocusOutside"
       @interact-outside="interactOutside"
-      @open-auto-focus="handerOpenAutoFocus"
-      @opened="() => drawerApi?.onOpened()"
+      @open-auto-focus="handleOpenAutoFocus"
       @pointer-down-outside="pointerDownOutside"
     >
       <SheetHeader
@@ -221,8 +227,8 @@ const getForceMount = computed(() => {
         <div class="flex items-center">
           <SheetClose
             v-if="closable && closeIconPlacement === 'left'"
-            as-child
             :disabled="submitting"
+            as-child
             class="data-[state=open]:bg-secondary focus:outline-hidden ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 disabled:pointer-events-none"
           >
             <slot name="close-icon">
@@ -262,8 +268,8 @@ const getForceMount = computed(() => {
           <slot name="extra"></slot>
           <SheetClose
             v-if="closable && closeIconPlacement === 'right'"
-            as-child
             :disabled="submitting"
+            as-child
             class="data-[state=open]:bg-secondary focus:outline-hidden ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 disabled:pointer-events-none"
           >
             <slot name="close-icon">
@@ -305,8 +311,8 @@ const getForceMount = computed(() => {
           <component
             :is="components.DefaultButton || QinButton"
             v-if="showCancelButton"
-            variant="ghost"
             :disabled="submitting"
+            variant="ghost"
             @click="() => drawerApi?.onCancel()"
           >
             <slot name="cancelText">

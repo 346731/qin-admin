@@ -179,7 +179,7 @@ function escapeKeyDown(e: KeyboardEvent) {
   }
 }
 
-function handlerOpenAutoFocus(e: Event) {
+function handleOpenAutoFocus(e: Event) {
   if (!openAutoFocus.value) {
     e?.preventDefault();
   }
@@ -207,6 +207,12 @@ function handleFocusOutside(e: Event) {
 const getForceMount = computed(() => {
   return !unref(destroyOnClose) && unref(firstOpened);
 });
+
+const handleOpened = () => {
+  requestAnimationFrame(() => {
+    props.modalApi?.onOpened();
+  });
+};
 
 function handleClosed() {
   isClosed.value = true;
@@ -238,21 +244,21 @@ function handleClosed() {
           },
         )
       "
+      :close-disabled="submitting"
       :force-mount="getForceMount"
       :modal="modal"
       :open="state?.isOpen"
+      :overlay-blur="overlayBlur"
       :show-close="closable"
       :z-index="zIndex"
-      :overlay-blur="overlayBlur"
       close-class="top-3"
-      @close-auto-focus="handleFocusOutside"
       @closed="handleClosed"
-      :close-disabled="submitting"
+      @opened="handleOpened"
+      @close-auto-focus="handleFocusOutside"
       @escape-key-down="escapeKeyDown"
       @focus-outside="handleFocusOutside"
       @interact-outside="interactOutside"
-      @open-auto-focus="handlerOpenAutoFocus"
-      @opened="() => modalApi?.onOpened()"
+      @open-auto-focus="handleOpenAutoFocus"
       @pointer-down-outside="pointerDownOutside"
     >
       <DialogHeader
@@ -328,8 +334,8 @@ function handleClosed() {
           <component
             :is="components.DefaultButton || QinButton"
             v-if="showCancelButton"
-            variant="ghost"
             :disabled="submitting"
+            variant="ghost"
             @click="() => modalApi?.onCancel()"
           >
             <slot name="cancelText">
