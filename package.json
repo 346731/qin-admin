@@ -40,6 +40,7 @@
     "build:docker": "./scripts/deploy/build-local-docker-image.sh",
     "build:ele": "pnpm run build --filter=@qin/web-ele",
     "build:naive": "pnpm run build --filter=@qin/web-naive",
+    "build:tdesign": "pnpm run build --filter=@qin/web-tdesign",
     "build:play": "pnpm run build --filter=@qin/playground",
     "changeset": "pnpm exec changeset",
     "check": "pnpm run check:circular && pnpm run check:dep && pnpm run check:type && pnpm check:cspell",

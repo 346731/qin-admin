@@ -499,11 +499,11 @@ catalogs:
       specifier: 3.0.5
       version: 3.0.5
     vxe-pc-ui:
-      specifier: ^4.8.17
-      version: 4.8.20
+      specifier: ^4.9.29
+      version: 4.10.22
     vxe-table:
-      specifier: ^4.15.8
-      version: 4.15.9
+      specifier: ^4.16.11
+      version: 4.17.14
     watermark-js-plus:
       specifier: ^1.6.3
       version: 1.6.3
@@ -887,6 +887,76 @@ importers:
       vue-router:
         specifier: 'catalog:'
         version: 4.5.1(vue@3.5.18(typescript@5.9.2))
+
+  apps/web-tdesign:
+    dependencies:
+      '@qin/access':
+        specifier: workspace:*
+        version: link:../../packages/effects/access
+      '@qin/common-ui':
+        specifier: workspace:*
+        version: link:../../packages/effects/common-ui
+      '@qin/constants':
+        specifier: workspace:*
+        version: link:../../packages/constants
+      '@qin/hooks':
+        specifier: workspace:*
+        version: link:../../packages/effects/hooks
+      '@qin/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
+      '@qin/layouts':
+        specifier: workspace:*
+        version: link:../../packages/effects/layouts
+      '@qin/locales':
+        specifier: workspace:*
+        version: link:../../packages/locales
+      '@qin/plugins':
+        specifier: workspace:*
+        version: link:../../packages/effects/plugins
+      '@qin/preferences':
+        specifier: workspace:*
+        version: link:../../packages/preferences
+      '@qin/request':
+        specifier: workspace:*
+        version: link:../../packages/effects/request
+      '@qin/stores':
+        specifier: workspace:*
+        version: link:../../packages/stores
+      '@qin/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
+      '@qin/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      '@qin/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
+      '@vueuse/core':
+        specifier: 'catalog:'
+        version: 13.6.0(vue@3.5.18(typescript@5.9.2))
+      dayjs:
+        specifier: 'catalog:'
+        version: 1.11.13
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      pinia:
+        specifier: ^3.0.3
+        version: 3.0.3(typescript@5.9.2)(vue@3.5.18(typescript@5.9.2))
+      tdesign-vue-next:
+        specifier: ^1.17.1
+        version: 1.17.2(vue@3.5.18(typescript@5.9.2))
+      vue:
+        specifier: ^3.5.17
+        version: 3.5.18(typescript@5.9.2)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.18(typescript@5.9.2))
+    devDependencies:
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
 
   docs:
     dependencies:
@@ -1739,10 +1809,10 @@ importers:
         version: 3.5.18(typescript@5.9.2)
       vxe-pc-ui:
         specifier: 'catalog:'
-        version: 4.8.20(vue@3.5.18(typescript@5.9.2))
+        version: 4.10.22(vue@3.5.18(typescript@5.9.2))
       vxe-table:
         specifier: 'catalog:'
-        version: 4.15.9(vue@3.5.18(typescript@5.9.2))
+        version: 4.17.14(vue@3.5.18(typescript@5.9.2))
 
   packages/effects/request:
     dependencies:
@@ -4395,6 +4465,9 @@ packages:
   '@types/sortablejs@1.15.8':
     resolution: {integrity: sha512-b79830lW+RZfwaztgs1aVPgbasJ8e7AXtZYHTELNXZPsERt4ymJdjV4OccDbHQAvHrCcFpbF78jkm0R6h/pZVg==}
 
+  '@types/tinycolor2@1.4.6':
+    resolution: {integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==}
+
   '@types/triple-beam@1.3.5':
     resolution: {integrity: sha512-6WaYesThRMCl19iryMYP7/x2OVgCtbIVflDGFpWnb9irXI3UjYE4AzmYuiUKY1AJstGijoY+MgUszMgRxIYTYw==}
 
@@ -4403,6 +4476,9 @@ packages:
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
+
+  '@types/validator@13.15.6':
+    resolution: {integrity: sha512-jc8VD+GfyVLfjVXG9qGq7MPR4UTz6e2fNHI6xmZhZ37f3iZLn0KecpxUnTsHLOPGgf1PfHUZmteBIJVsnYTDkQ==}
 
   '@types/web-bluetooth@0.0.16':
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
@@ -4983,8 +5059,8 @@ packages:
   '@vueuse/shared@9.13.0':
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
 
-  '@vxe-ui/core@4.2.11':
-    resolution: {integrity: sha512-Cv0XKTGgFD+CD2MGixxM+k60Y3tFEJYErQj59tuPd0y0HuSFc7sQk0fuXdbcNgxZxtAi4zX3nsDk3kY+/HeAgQ==}
+  '@vxe-ui/core@4.2.14':
+    resolution: {integrity: sha512-ONu8vgW8+q0SFtAoUEPZibFjlx0nzAKTqTXD9pO2AmgYCIMtYIePFLnqiHIYaYfH/dCibVZ6KGWUc/wqxnbGDw==}
     peerDependencies:
       vue: ^3.5.17
 
@@ -9994,6 +10070,17 @@ packages:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
 
+  tdesign-icons-vue-next@0.4.1:
+    resolution: {integrity: sha512-uDPuTLRORnGcTyVGNoentNaK4V+ZcBmhYwcY3KqDaQQ5rrPeLMxu0ZVmgOEf0JtF2QZiqAxY7vodNEiLUdoRKA==}
+    peerDependencies:
+      vue: ^3.5.17
+
+  tdesign-vue-next@1.17.2:
+    resolution: {integrity: sha512-nTofPSKGQguOS+Lb62fDiLS1Rs3Ngzb8rE8sPEjfMdDjdFZ5kEUgvVp+J+8GKfgwVRAZRjv//qSzZVt6cqgXxA==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      vue: ^3.5.17
+
   temp-dir@2.0.0:
     resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
     engines: {node: '>=8'}
@@ -10040,6 +10127,9 @@ packages:
 
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
+
+  tinycolor2@1.6.0:
+    resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
 
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
@@ -10474,6 +10564,10 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
+  validator@13.15.23:
+    resolution: {integrity: sha512-4yoz1kEWqUjzi5zsPbAS/903QXSYp0UOtHsPpp7p9rHAw/W+dkInskAE386Fat3oKRROwO98d9ZB0G4cObgUyw==}
+    engines: {node: '>= 0.10'}
+
   vdirs@0.1.8:
     resolution: {integrity: sha512-H9V1zGRLQZg9b+GdMk8MXDN2Lva0zx72MPahDKc30v+DtwKjfyOSXWRIX4t2mhDubM1H09gPhWeth/BJWPHGUw==}
     peerDependencies:
@@ -10752,11 +10846,11 @@ packages:
     peerDependencies:
       vue: ^3.5.17
 
-  vxe-pc-ui@4.8.20:
-    resolution: {integrity: sha512-//Ixq6Q1iBPZua4ia8/DjF7ZoWG2rb10mr2PuQHTJHsbI3I0mXhq6PyouMnMehjfFBhSyLMl9nrQbtIh/lFFeg==}
+  vxe-pc-ui@4.10.22:
+    resolution: {integrity: sha512-a7WgzkKlzAkcy0MDjpWg/jOxbNyDfiKD1gmwemCIm68Hhi96EYdACYV5kXpIU6S2lIemtSzmUHAnEnAwm3o03w==}
 
-  vxe-table@4.15.9:
-    resolution: {integrity: sha512-zWFyW3Oi4bXQ5J2oiaaa+lXDbo4EBzX2EyjQKagBQYS4zaL8V5mzV4fxG4xWiW8V86pojbubSIVaiSKSaMj4tg==}
+  vxe-table@4.17.14:
+    resolution: {integrity: sha512-bnPvt6TURzN1FMSB9q3HbyY4yiWDKXnWZW+x7x5V7S5HCbAIDgtVYMYky4JnFlsEaA7Six67Oxycktfx4/DJUQ==}
 
   warning@4.0.3:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
@@ -10933,6 +11027,9 @@ packages:
 
   xe-utils@3.7.8:
     resolution: {integrity: sha512-V/k6B/ASYir6yLYhp62DnM17po9u1N9mou/rn4if5WoFCsAO49JpCiVpkDpwCv4zxGfWmhWgzmz4FytWF+pDVw==}
+
+  xe-utils@3.7.9:
+    resolution: {integrity: sha512-LWH6M7g+TKX8P2fqGxDPgJQygiULhbMtpmfxTMxJTUjuUv9y2+I45UCcVLh5AnmJSxDV1xTxsq7G5P9Eid06JQ==}
 
   xgplayer-subtitles@3.0.23:
     resolution: {integrity: sha512-deGdV75giVzfTTdG9XATmji39NHwKTpEelWt2rRx/RyXGgU2bQFp0Ft7yWaK2Uu8A/WVrP5fpxEAj4MstREMkQ==}
@@ -12936,7 +13033,7 @@ snapshots:
 
   '@manypkg/find-root@1.1.0':
     dependencies:
-      '@babel/runtime': 7.28.3
+      '@babel/runtime': 7.28.4
       '@types/node': 12.20.55
       find-up: 4.1.0
       fs-extra: 8.1.0
@@ -13833,11 +13930,15 @@ snapshots:
 
   '@types/sortablejs@1.15.8': {}
 
+  '@types/tinycolor2@1.4.6': {}
+
   '@types/triple-beam@1.3.5': {}
 
   '@types/trusted-types@2.0.7': {}
 
   '@types/unist@3.0.3': {}
+
+  '@types/validator@13.15.6': {}
 
   '@types/web-bluetooth@0.0.16': {}
 
@@ -14638,11 +14739,11 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@vxe-ui/core@4.2.11(vue@3.5.18(typescript@5.9.2))':
+  '@vxe-ui/core@4.2.14(vue@3.5.18(typescript@5.9.2))':
     dependencies:
       dom-zindex: 1.0.6
       vue: 3.5.18(typescript@5.9.2)
-      xe-utils: 3.7.8
+      xe-utils: 3.7.9
 
   '@whatwg-node/disposablestack@0.0.6':
     dependencies:
@@ -20066,6 +20167,28 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
+  tdesign-icons-vue-next@0.4.1(vue@3.5.18(typescript@5.9.2)):
+    dependencies:
+      '@babel/runtime': 7.28.4
+      vue: 3.5.18(typescript@5.9.2)
+
+  tdesign-vue-next@1.17.2(vue@3.5.18(typescript@5.9.2)):
+    dependencies:
+      '@babel/runtime': 7.28.4
+      '@popperjs/core': 2.11.8
+      '@types/lodash-es': 4.17.12
+      '@types/sortablejs': 1.15.8
+      '@types/tinycolor2': 1.4.6
+      '@types/validator': 13.15.6
+      dayjs: 1.11.13
+      lodash-es: 4.17.21
+      mitt: 3.0.1
+      sortablejs: 1.15.6
+      tdesign-icons-vue-next: 0.4.1(vue@3.5.18(typescript@5.9.2))
+      tinycolor2: 1.6.0
+      validator: 13.15.23
+      vue: 3.5.18(typescript@5.9.2)
+
   temp-dir@2.0.0: {}
 
   tempy@0.6.0:
@@ -20103,6 +20226,8 @@ snapshots:
   tiny-emitter@2.1.0: {}
 
   tinybench@2.9.0: {}
+
+  tinycolor2@1.6.0: {}
 
   tinyexec@0.3.2: {}
 
@@ -20573,6 +20698,8 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
+  validator@13.15.23: {}
+
   vdirs@0.1.8(vue@3.5.18(typescript@5.9.2)):
     dependencies:
       evtd: 0.2.4
@@ -20952,15 +21079,15 @@ snapshots:
       vooks: 0.2.12(vue@3.5.18(typescript@5.9.2))
       vue: 3.5.18(typescript@5.9.2)
 
-  vxe-pc-ui@4.8.20(vue@3.5.18(typescript@5.9.2)):
+  vxe-pc-ui@4.10.22(vue@3.5.18(typescript@5.9.2)):
     dependencies:
-      '@vxe-ui/core': 4.2.11(vue@3.5.18(typescript@5.9.2))
+      '@vxe-ui/core': 4.2.14(vue@3.5.18(typescript@5.9.2))
     transitivePeerDependencies:
       - vue
 
-  vxe-table@4.15.9(vue@3.5.18(typescript@5.9.2)):
+  vxe-table@4.17.14(vue@3.5.18(typescript@5.9.2)):
     dependencies:
-      vxe-pc-ui: 4.8.20(vue@3.5.18(typescript@5.9.2))
+      vxe-pc-ui: 4.10.22(vue@3.5.18(typescript@5.9.2))
     transitivePeerDependencies:
       - vue
 
@@ -21237,6 +21364,8 @@ snapshots:
   xdg-basedir@5.1.0: {}
 
   xe-utils@3.7.8: {}
+
+  xe-utils@3.7.9: {}
 
   xgplayer-subtitles@3.0.23(core-js@3.45.0):
     dependencies:

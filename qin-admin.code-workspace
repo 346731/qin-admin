@@ -17,6 +17,10 @@
       "path": "apps/web-naive",
     },
     {
+      "name": "@qin/web-tdesign",
+      "path": "apps/web-tdesign",
+    },
+    {
       "name": "@qin/docs",
       "path": "docs",
     },
