@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { ZodType } from 'zod';
 
 import type { FormSchema, MaybeComponentProps } from '../types';
@@ -59,7 +59,7 @@ const values = useFormValues();
 const errors = useFieldError(fieldName);
 const fieldComponentRef = useTemplateRef<HTMLInputElement>('fieldComponentRef');
 const formApi = formRenderProps.form;
-const compact = formRenderProps.compact;
+const compact = computed(() => formRenderProps.compact);
 const isInValid = computed(() => errors.value?.length > 0);
 
 const FieldComponent = computed(() => {
@@ -282,9 +282,9 @@ onUnmounted(() => {
 <template>
   <FormField
     v-if="isIf"
-    v-bind="fieldProps"
     v-slot="slotProps"
     :name="fieldName"
+    v-bind="fieldProps"
   >
     <FormItem
       v-show="isShow"
@@ -311,8 +311,8 @@ onUnmounted(() => {
             labelClass,
           )
         "
-        :help="help"
         :colon="colon"
+        :help="help"
         :label="label"
         :required="shouldRequired && !hideRequiredMark"
         :style="labelStyle"
@@ -339,8 +339,8 @@ onUnmounted(() => {
                   'border-destructive focus:border-destructive hover:border-destructive/80 focus:shadow-[0_0_0_2px_rgba(255,38,5,0.06)]':
                     isInValid,
                 }"
-                v-bind="createComponentProps(slotProps)"
                 :disabled="shouldDisabled"
+                v-bind="createComponentProps(slotProps)"
               >
                 <template
                   v-for="name in renderContentKey"
@@ -383,7 +383,7 @@ onUnmounted(() => {
           </FormDescription>
         </div>
 
-        <Transition name="slide-up" v-if="!compact">
+        <Transition v-if="!compact" name="slide-up">
           <FormMessage class="absolute" />
         </Transition>
       </div>
