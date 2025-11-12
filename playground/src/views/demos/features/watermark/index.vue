@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-08-01 03:43:04
  * @LastEditTime: 2025-08-01 09:19:42
@@ -15,7 +15,7 @@ const { destroyWatermark, updateWatermark, watermark } = useWatermark();
 
 async function recreateWaterMark() {
   destroyWatermark();
-  await updateWatermark({});
+  await createWaterMark({});
 }
 
 async function createWaterMark() {
