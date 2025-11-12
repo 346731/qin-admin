@@ -215,7 +215,8 @@ function onSelect(item: FlattenedItem<Recordable<any>>, isSelected: boolean) {
           get(i.value, props.valueField) === get(item.value, props.valueField)
         );
       })
-      ?.parents?.forEach((p) => {
+      ?.parents?.filter((item) => !get(item, props.disabledField))
+      ?.forEach((p) => {
         if (Array.isArray(modelValue.value) && !modelValue.value.includes(p)) {
           modelValue.value.push(p);
         }
@@ -233,7 +234,8 @@ function onSelect(item: FlattenedItem<Recordable<any>>, isSelected: boolean) {
           get(i.value, props.valueField) === get(item.value, props.valueField)
         );
       })
-      ?.parents?.reverse()
+      ?.parents?.filter((item) => !get(item, props.disabledField))
+      ?.reverse()
       .forEach((p) => {
         const children = flattenData.value.filter((i) => {
           return (
@@ -338,7 +340,7 @@ defineExpose({
         :class="
           cn('cursor-pointer', getNodeClass?.(item), {
             'data-[selected]:bg-accent': !multiple,
-            'cursor-not-allowed': isNodeDisabled(item),
+            'text-foreground/50 cursor-not-allowed': isNodeDisabled(item),
           })
         "
         :style="{ 'margin-left': `${item.level - 1}rem` }"
