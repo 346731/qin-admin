@@ -438,7 +438,7 @@ function handleSetFormValue() {
       </div>
     </template>
     <template #extra>
-      <DocButton class="mb-2" path="/components/common-ui/arco-form" />
+      <DocButton class="mb-2" path="/components/common-ui/qin-form" />
     </template>
     <Card title="基础示例">
       <template #extra>

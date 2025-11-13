@@ -15,7 +15,7 @@ import { defineComponent, h, isReactive, onBeforeUnmount, watch } from 'vue';
 
 import { useStore } from '@qin-core/shared/store';
 
-import QinUseForm from './arco-use-form.vue';
+import QinUseForm from './qin-use-form.vue';
 import { FormApi } from './form-api';
 
 export function useQinForm<

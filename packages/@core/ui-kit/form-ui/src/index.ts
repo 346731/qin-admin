@@ -15,5 +15,5 @@ export type {
 } from './types';
 
 export * from './use-qin-form';
-// export { default as QinForm } from './arco-form.vue';
+// export { default as QinForm } from './qin-form.vue';
 export * as z from 'zod';
