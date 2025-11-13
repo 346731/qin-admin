@@ -101,7 +101,7 @@ const [CustomLayoutForm] = useQinForm({
       </div>
     </template>
     <template #extra>
-      <DocButton class="mb-2" path="/components/common-ui/arco-form" />
+      <DocButton class="mb-2" path="/components/common-ui/qin-form" />
     </template>
     <Card title="使用tailwind自定义布局">
       <CustomLayoutForm />

@@ -306,7 +306,7 @@ async function init() {
     // props.api.reload(formApi.form?.values ?? {});
   }
 
-  // form 由 arco-form代替，所以不适配formConfig，这里给出警告
+  // form 由 qin-form代替，所以不适配formConfig，这里给出警告
   const formConfig = gridOptions.value?.formConfig;
   // 处理某个页面加载多个Table时，第2个之后的Table初始化报出警告
   // 因为第一次初始化之后会把defaultGridOptions和gridOptions合并后缓存进State
@@ -316,7 +316,7 @@ async function init() {
     );
   }
   props.api?.setState?.({ gridOptions: defaultGridOptions });
-  // form 由 arco-form 代替，所以需要保证query相关事件可以拿到参数
+  // form 由 qin-form 代替，所以需要保证query相关事件可以拿到参数
   extendProxyOptions(props.api, defaultGridOptions, () =>
     formApi.getLatestSubmissionValues(),
   );
@@ -398,12 +398,12 @@ onUnmounted(() => {
       <template #toolbar-tools="slotProps">
         <slot name="toolbar-tools" v-bind="slotProps"></slot>
         <VxeButton
-          icon="vxe-icon-search"
-          circle
-          class="ml-2"
           v-if="gridOptions?.toolbarConfig?.search && !!formOptions"
           :status="showSearchForm ? 'primary' : undefined"
           :title="$t('common.search')"
+          circle
+          class="ml-2"
+          icon="vxe-icon-search"
           @click="onSearchBtnClick"
         />
       </template>

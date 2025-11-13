@@ -12,7 +12,7 @@ import { registerLoadingDirective } from '@qin/common-ui';
 import { preferences } from '@qin/preferences';
 import { initStores } from '@qin/stores';
 import '@qin/styles';
-import '@qin/styles/naive';
+import 'tdesign-vue-next/es/style/index.css';
 
 import { useTitle } from '@vueuse/core';
 
