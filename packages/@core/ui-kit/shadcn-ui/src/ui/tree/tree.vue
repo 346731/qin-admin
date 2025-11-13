@@ -322,7 +322,10 @@ defineExpose({
         <Checkbox
           v-if="multiple"
           @click.stop
-          @update:checked="(checked) => (checked ? checkAll() : unCheckAll())"
+          @update:model-value="
+            (checked: boolean | 'indeterminate') =>
+              checked === true ? checkAll() : unCheckAll()
+          "
         />
       </div>
     </div>

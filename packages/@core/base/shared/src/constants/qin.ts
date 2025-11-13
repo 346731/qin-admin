@@ -33,3 +33,5 @@ export const QIN_NAIVE_PREVIEW_URL = 'https://naive.demo.0x3.cn';
 export const QIN_ANT_PREVIEW_URL = 'https://antd.demo.0x3.cn';
 
 export const QIN_DESIGN_PREVIEW_URL = 'https://arco.demo.0x3.cn';
+
+export const QIN_TD_PREVIEW_URL = 'https://tdesign.demo.0x3.cn';

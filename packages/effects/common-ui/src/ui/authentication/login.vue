@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { Recordable } from '@qin/types';
 
 import type { QinFormSchema } from '@qin-core/form-ui';
@@ -115,7 +115,7 @@ defineExpose({
       <div class="flex-center">
         <QinCheckbox
           v-if="showRememberMe"
-          v-model:checked="rememberMe"
+          v-model="rememberMe"
           name="rememberMe"
         >
           {{ $t('authentication.rememberMe') }}

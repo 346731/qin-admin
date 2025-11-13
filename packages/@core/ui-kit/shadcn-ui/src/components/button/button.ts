@@ -20,7 +20,7 @@ export interface QinButtonProps {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    *
-   * Read our [Composition](https://www.reka-ui.com/guides/composition.html) guide for more details.
+   * Read our [Composition](https://www.reka-ui.com/docs/guides/composition) guide for more details.
    */
   asChild?: boolean;
   class?: any;

@@ -84,6 +84,8 @@ onBeforeUnmount(() => {
 });
 
 const id = useId();
+
+const pinType = 'text' as const;
 </script>
 
 <template>
@@ -91,10 +93,10 @@ const id = useId();
     :id="id"
     v-model="inputValue"
     :disabled="disabled"
+    :type="pinType"
     class="flex w-full justify-between"
     otp
     placeholder="○"
-    type="number"
     @complete="handleComplete"
   >
     <div class="relative flex w-full">

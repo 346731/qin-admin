@@ -29,20 +29,20 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
     baseURL,
     transformResponse: (data: any, header: AxiosResponseHeaders) => {
       // storeAsString指示将BigInt存储为字符串，设为false则会存储为内置的BigInt类型
-      const contentType = header.getContentType();
-      if (!contentType?.includes('application/json')) {
-        return data;
+      if (
+        header.getContentType()?.toString().includes('application/json') &&
+        typeof data === 'string'
+      ) {
+        try {
+          return cloneDeep(
+            JSONBigInt({ storeAsString: true, strict: true }).parse(data),
+          );
+        } catch (error) {
+          console.warn('Failed to parse JSON with BigInt support:', error);
+          return data;
+        }
       }
-
-      try {
-        const parsed = JSONBigInt({ storeAsString: true, strict: true }).parse(
-          data,
-        );
-        return cloneDeep(parsed);
-      } catch (error) {
-        console.warn('Failed to parse JSON with BigInt support:', error);
-        return data;
-      }
+      return data;
     },
   });
 

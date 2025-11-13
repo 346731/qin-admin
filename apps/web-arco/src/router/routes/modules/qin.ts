@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 09:37:08
- * @LastEditTime: 2025-08-18 10:04:02
+ * @LastEditTime: 2025-08-18 10:17:01
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -14,8 +14,9 @@ import {
   QIN_GITHUB_URL,
   QIN_LOGO_URL,
   QIN_NAIVE_PREVIEW_URL,
+  QIN_TD_PREVIEW_URL,
 } from '@qin/constants';
-import { SvgAntdvLogoIcon } from '@qin/icons';
+import { SvgAntdvLogoIcon, SvgTDesignIcon } from '@qin/icons';
 
 import { IFrameView } from '#/layouts';
 import { $t } from '#/locales';
@@ -82,6 +83,17 @@ const routes: RouteRecordRaw[] = [
           icon: 'logos:naiveui',
           link: QIN_NAIVE_PREVIEW_URL,
           title: $t('demos.qin.naive-ui'),
+        },
+      },
+      {
+        name: 'QinTDesign',
+        path: '/qin/tdesign',
+        component: IFrameView,
+        meta: {
+          badgeType: 'dot',
+          icon: SvgTDesignIcon,
+          link: QIN_TD_PREVIEW_URL,
+          title: $t('demos.qin.tdesign'),
         },
       },
     ],

@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-08-18 10:08:02
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { WorkbenchTodoItem } from '../typing';
 
 import {
@@ -46,7 +46,7 @@ withDefaults(defineProps<Props>(), {
           class="flex cursor-pointer justify-between gap-x-6 py-5"
         >
           <div class="flex min-w-0 items-center gap-x-4">
-            <QinCheckbox v-model:checked="item.completed" name="completed" />
+            <QinCheckbox v-model="item.completed" name="completed" />
             <div class="min-w-0 flex-auto">
               <p class="text-foreground text-sm font-semibold leading-6">
                 {{ item.title }}

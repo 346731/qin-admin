@@ -1,8 +1,8 @@
 /*
  * @Description:
  * @Author: LLiuHuan
- * @Date: 2025-05-27 09:37:08
- * @LastEditTime: 2025-08-18 10:16:06
+ * @Date: 2025-05-27 15:35:10
+ * @LastEditTime: 2025-08-18 10:16:32
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -11,11 +11,12 @@ import {
   QIN_ANT_PREVIEW_URL,
   QIN_DESIGN_PREVIEW_URL,
   QIN_DOC_URL,
-  QIN_ELE_PREVIEW_URL,
   QIN_GITHUB_URL,
   QIN_LOGO_URL,
+  QIN_NAIVE_PREVIEW_URL,
+  QIN_TD_PREVIEW_URL,
 } from '@qin/constants';
-import { SvgAntdvLogoIcon, SvgQinLogoIcon } from '@qin/icons';
+import { SvgAntdvLogoIcon, SvgQinLogoIcon, SvgTDesignIcon } from '@qin/icons';
 
 import { IFrameView } from '#/layouts';
 import { $t } from '#/locales';
@@ -63,7 +64,7 @@ const routes: RouteRecordRaw[] = [
         },
       },
       {
-        name: 'QinAntd',
+        name: 'QinArco',
         path: '/qin/arco',
         component: IFrameView,
         meta: {
@@ -74,14 +75,25 @@ const routes: RouteRecordRaw[] = [
         },
       },
       {
-        name: 'QinElementPlus',
-        path: '/qin/ele',
+        name: 'QinNaive',
+        path: '/qin/naive',
         component: IFrameView,
         meta: {
           badgeType: 'dot',
-          icon: 'logos:element',
-          link: QIN_ELE_PREVIEW_URL,
-          title: $t('demos.qin.element-plus'),
+          icon: 'logos:naiveui',
+          link: QIN_NAIVE_PREVIEW_URL,
+          title: $t('demos.qin.naive-ui'),
+        },
+      },
+      {
+        name: 'QinTDesign',
+        path: '/qin/tdesign',
+        component: IFrameView,
+        meta: {
+          badgeType: 'dot',
+          icon: SvgTDesignIcon,
+          link: QIN_TD_PREVIEW_URL,
+          title: $t('demos.qin.tdesign'),
         },
       },
     ],

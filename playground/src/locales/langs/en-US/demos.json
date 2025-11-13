@@ -10,7 +10,8 @@
     "antdv": "Ant Design Vue Version",
     "arco": "Arco Design Vue Version",
     "naive-ui": "Naive UI Version",
-    "element-plus": "Element Plus Version"
+    "element-plus": "Element Plus Version",
+    "tdesign": "TDesign Vue Version"
   },
   "access": {
     "frontendPermissions": "Frontend Permissions",

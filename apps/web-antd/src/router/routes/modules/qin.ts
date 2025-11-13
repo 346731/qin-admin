@@ -14,8 +14,9 @@ import {
   QIN_GITHUB_URL,
   QIN_LOGO_URL,
   QIN_NAIVE_PREVIEW_URL,
+  QIN_TD_PREVIEW_URL,
 } from '@qin/constants';
-import { SvgQinLogoIcon } from '@qin/icons';
+import { SvgQinLogoIcon, SvgTDesignIcon } from '@qin/icons';
 
 import { IFrameView } from '#/layouts';
 import { $t } from '#/locales';
@@ -82,6 +83,17 @@ const routes: RouteRecordRaw[] = [
           icon: 'logos:naiveui',
           link: QIN_NAIVE_PREVIEW_URL,
           title: $t('demos.qin.naive-ui'),
+        },
+      },
+      {
+        name: 'QinTDesign',
+        path: '/qin/tdesign',
+        component: IFrameView,
+        meta: {
+          badgeType: 'dot',
+          icon: SvgTDesignIcon,
+          link: QIN_TD_PREVIEW_URL,
+          title: $t('demos.qin.tdesign'),
         },
       },
     ],
