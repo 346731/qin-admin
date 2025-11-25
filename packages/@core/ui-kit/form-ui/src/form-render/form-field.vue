@@ -379,10 +379,10 @@ onUnmounted(() => {
           <div v-if="suffix" class="ml-1">
             <QinRenderContent :content="suffix" />
           </div>
-          <FormDescription v-if="description" class="ml-1">
-            <QinRenderContent :content="description" />
-          </FormDescription>
         </div>
+        <FormDescription v-if="description" class="ml-1">
+          <QinRenderContent :content="description" />
+        </FormDescription>
 
         <Transition v-if="!compact" name="slide-up">
           <FormMessage class="absolute" />
