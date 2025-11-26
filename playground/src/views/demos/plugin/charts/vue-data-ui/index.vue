@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-11-26 09:51:06
- * @LastEditTime: 2025-11-26 11:07:54
+ * @LastEditTime: 2025-11-26 14:39:27
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -21,9 +21,15 @@ import {
 </script>
 
 <template>
-  <Page description="一个基于 JavaScript 的开源可视化图表库" title="ECharts">
+  <Page
+    description="一个赋予用户权力的数据可视化 Vue3 组件库，用于巧妙地叙述数据故事。"
+    title="VueDataUI"
+  >
     <template #extra>
-      <DocButton path="https://echarts.apache.org" text="查看官方文档" />
+      <DocButton
+        path="https://vue-data-ui.graphieros.com/"
+        text="查看官方文档"
+      />
     </template>
     <Grid
       :col-gap="24"
