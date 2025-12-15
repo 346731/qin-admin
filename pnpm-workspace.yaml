@@ -210,5 +210,5 @@ catalog:
   vxe-table: ^4.16.11
   watermark-js-plus: ^1.6.3
   xgplayer: ^3.0.23
-  zod: ^3.25.76
+  zod: ^4.1.13
   zod-defaults: 0.1.3
